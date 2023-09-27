@@ -1,0 +1,51 @@
+/* General reset and styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #000;  /* Dark background, like night sky */
+    color: #FFF;             /* White text for readability */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;           /* Full viewport height */
+}
+
+.skill-tree {
+    width: 80%;              /* Adjust based on your preference */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 2rem;               /* Spacing between constellations */
+}
+
+.constellation {
+    flex: 1;
+    display: flex;
+    flex-direction: column;  /* Stacking skills vertically, can be changed to row if preferred */
+    align-items: center;
+    gap: 1rem;               /* Spacing between skills */
+}
+
+.skill {
+    font-size: 2rem;         /* Size of the star/skill point */
+    cursor: pointer;         /* Indicates interactivity */
+    transition: transform 0.3s ease; /* Smooth scaling on hover */
+}
+
+.skill:hover {
+    transform: scale(1.2);   /* Slightly enlarge the star/skill point on hover */
+}
+
+/* Optional: Tooltips to show skill name on hover. This requires additional HTML and modifications. */
+.skill[data-info]:hover::before {
+    content: attr(data-info);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    padding: 0.5rem;
+    border-radius: 5px;
+    font-size: 0.75rem;
+}
